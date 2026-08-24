@@ -37,7 +37,7 @@
             <div class="icon">♪</div>
             <div>
               <h2>Desahogo</h2>
-              <div class="meta">3 de 4 pistas grabadas</div>
+              <div class="meta">1 de 4 pistas grabadas</div>
             </div>
           </div>
           <div style="display:flex;align-items:center;gap:14px;">
@@ -52,17 +52,17 @@
 
           <div class="track">
             <div class="track-title"><span><span class="num">01</span>Al final la conocí</span></div>
-            <audio controls preload="none" src="/Audio/D2esahogho.mp3"></audio>
+            <audio class="preview-audio" controls controlsList="nodownload noremoteplayback" preload="none" src="/Audio/D2esahogho.mp3"></audio>
           </div>
 
           <div class="track">
             <div class="track-title"><span><span class="num">02</span>Cadenas de Agosto</span></div>
-            <audio controls preload="none" src="audio/desahogo-02.mp3"></audio>
+            <audio class="preview-audio" controls controlsList="nodownload noremoteplayback" preload="none" src="audio/desahogo-02.mp3"></audio>
           </div>
 
           <div class="track">
             <div class="track-title"><span><span class="num">03</span>Desahogo</span></div>
-            <audio controls preload="none" src="/Audio/Desahogho.mp3" ></audio>
+            <audio class="preview-audio" controls controlsList="nodownload noremoteplayback" preload="none" src="/Audio/Desahogho.mp3"></audio>
           </div>
 
           <div class="track">
@@ -81,7 +81,7 @@
             <div class="icon">♪</div>
             <div>
               <h2>Death Machine</h2>
-              <div class="meta">1 de 4 pistas grabadas</div>
+              <div class="meta">2 de 4 pistas grabadas</div>
             </div>
           </div>
           <div style="display:flex;align-items:center;gap:14px;">
@@ -96,12 +96,12 @@
 
           <div class="track">
             <div class="track-title"><span><span class="num">01</span>InstaKill</span></div>
-            <audio controls preload="none" src="/Audio/Instakill.mp3" onvolumechange="20"></audio>
+            <audio class="preview-audio" controls controlsList="nodownload noremoteplayback" preload="none" src="/Audio/Instakill.mp3"></audio>
           </div>
 
           <div class="track">
             <div class="track-title"><span><span class="num">02</span>DeathMachine</span></div>
-            <audio controls preload="none" src="/Audio/NoseLaverdad.mp3" onvolumechange="20"></audio>
+            <audio class="preview-audio" controls controlsList="nodownload noremoteplayback" preload="none" src="/Audio/NoseLaverdad.mp3"></audio>
           </div>
 
           <div class="track">
@@ -142,12 +142,12 @@
 
           <div class="track">
             <div class="track-title"><span><span class="num">01</span>Begins</span></div>
-            <audio controls preload="none" src="audio/silentcrisis-01.mp3"></audio>
+            <audio class="preview-audio" controls controlsList="nodownload noremoteplayback" preload="none" src="audio/silentcrisis-01.mp3"></audio>
           </div>
 
           <div class="track">
             <div class="track-title"><span><span class="num">02</span>Troops of Doom</span></div>
-            <audio controls preload="none" src="audio/silentcrisis-02.mp3"></audio>
+            <audio class="preview-audio" controls controlsList="nodownload noremoteplayback" preload="none" src="audio/silentcrisis-02.mp3"></audio>
           </div>
 
           <div class="track">
@@ -191,13 +191,15 @@
     });
   });
 
-  
-
   document.querySelectorAll('.preview-audio').forEach(audio => {
+    // Bloquea el menú contextual (clic derecho) para evitar "Guardar audio como..."
+    audio.addEventListener('contextmenu', e => e.preventDefault());
+
+    // Corta la reproducción al llegar al límite de segundos
     audio.addEventListener('timeupdate', () => {
       if (audio.currentTime >= LIMITE_SEGUNDOS) {
         audio.pause();
-        audio.currentTime = 0; 
+        audio.currentTime = 0;
       }
     });
   });
