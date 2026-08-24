@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="es-es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jacobo A. — Proyectos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/proyectos.css" />
+    <link rel="shortcut icon" href="/Images/Logo.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="index.html"><b>Jacobo</b>.A</a>
+      <nav>
+        <a href="/index.html">Inicio</a>
+        <a href="proyectos.html" class="current">Proyectos</a>
+        <a href="videojuegos.html" >Videojuegos</a>
+        <a href="musica.html">Música</a>
+        <a href="/index.html#Contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="page-eyebrow">// Java , C# , .NET MAUI, HTML, JAVASCRIPT</div>
+      <h1>Proyectos</h1>
+      <p class="lede">
+        Proyectos personales de videojuegos tipo plataformas: diseño,
+        programación en C#, creación y animación de sprites, y narrativa. Haz
+        clic en una tarjeta para ver más detalles.
+      </p>
+
+      <div class="games-grid">
+        <button class="game-card" data-game="AKB">
+          <div
+            class="thumb"
+            style="background-image: url(&quot;/Images2/AM-1.jpeg&quot;)"
+          ></div>
+          <div class="info">
+            <h3>Akihabara Market</h3>
+            <span class="type">Manejo de Inventario + IA</span>
+            <div class="status">Finalizado</div>
+          </div>
+        </button>
+
+        <button class="game-card" data-game="SLV">
+          <div
+            class="thumb"
+            style="background-image: url(&quot;/Images2/SV-1.png&quot;)"
+          ></div>
+          <div class="info">
+            <h3>Salovet</h3>
+            <span class="type">Manejo de Clientes + IA + .NET MAUI</span>
+            <div class="status">Finalizado</div>
+          </div>
+        </button>
+
+        <button class="game-card" data-game="JSD">
+          <div
+            class="thumb"
+            style="background-image: url(&quot;/Images2/JS-1.jpeg&quot;)"
+          ></div>
+          <div class="info">
+            <h3>J SEND</h3>
+            <span class="type">Aplicacion de Comunicacion</span>
+            <div class="status">En desarrollo</div>
+          </div>
+        </button>
+
+        <button class="game-card" data-game="SPH">
+          <div
+            class="thumb"
+            style="background-image: url(&quot;/Images2/SF-1.jpeg&quot;)"
+          ></div>
+          <div class="info">
+            <h3>SoftPhone</h3>
+            <span class="type">Comunicacion</span>
+            <div class="status">En receso</div>
+          </div>
+        </button>
+      </div>
+    </main>
+
+    <footer>
+      <span>© 2026 Jacobo Álvarez Delgado</span>
+      <div class="socials">
+        <a href="mailto:jacobo.alvarez.delgado@gmail.com">Email</a>
+        <a href="https://github.com/tu-usuario" target="_blank" rel="noopener"
+          >GitHub</a
+        >
+        <a
+          href="https://www.linkedin.com/in/jacobo-alvarez-delgado-/"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+      </div>
+    </footer>
+
+    <!-- ---------- Modal ---------- -->
+    <div class="modal-backdrop" id="modalBackdrop">
+      <div
+        class="modal-window"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <div class="modal-titlebar">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <div class="filename" id="modalFilename">juego.exe</div>
+          <button class="modal-close" id="modalClose" aria-label="Cerrar">
+            ✕
+          </button>
+        </div>
+        <div class="modal-carousel" id="modalCarousel">
+          <div class="carousel-track" id="carouselTrack"></div>
+          <button
+            class="carousel-btn prev"
+            id="carouselPrev"
+            aria-label="Anterior"
+          >
+            ‹
+          </button>
+          <button
+            class="carousel-btn next"
+            id="carouselNext"
+            aria-label="Siguiente"
+          >
+            ›
+          </button>
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+        <div class="modal-body">
+          <h2 id="modalTitle"></h2>
+          <span class="type" id="modalType"></span>
+          <p id="modalDesc"></p>
+          <ul class="facts" id="modalFacts"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const games = {
+        "AKB": {
+          title: "Akihabara Market",
+          type: "Administracion",
+          filename: "AkihabaraMarket.exe",
+          images: [
+            { type: "image", src: "/Images2/AM-1.jpeg" },
+            { type: "image", src: "/Images2/AM-2.jpeg" },
+            { type: "image", src: "/Images2/AM-3.jpeg" },
+            { type: "image", src: "/Images2/AM-4.jpeg" },
+          ],
+          desc: "Aplicacion de Administacion de Inventaerio, dedicada a una tienda de estilo anime, con una IA implementada para facilitar su uso.",
+          facts: [
+            "Motor: Java, Java Swing, SpringBooot, SQL",
+            "Estado: en desarrollo",
+            "Fecha: 2022",
+          ],
+        },
+        "SLV": {
+          title: "Salovet",
+          type: "Administracion",
+          filename: "Salovet.exe",
+          images: [
+            { type: "image", src: "/Images2/SV-1.png" },
+            { type: "image", src: "/Images2/SV-2.png" },
+            { type: "image", src: "/Images2/SV-3.png" },
+            { type: "video", src: "https://youtu.be/yV-odU6UURw" },
+          ],
+          desc: "Aplicacion de Administracion Veterinaria pensada para cualquier tipo de veterinaria, con aplicacion movil para mantener una comunicacion mas clara y sencilla, teniendo su apartado de sobremesa para los profesionales",
+          facts: [
+            "Motor: .NET , .NET MAUI, PostgreSQL, Swagger",
+            "Estado: Finalizado",
+            "Fecha: 2026",
+          ],
+        },
+        "JSD": {
+          title: "J-SEND",
+          type: "Comunicación",
+          filename: "www.JSend.com",
+          images: [
+            { type: "image", src: "/Images2/JS-1.jpeg" },
+            { type: "image", src: "/Images2/JS-2.jpeg" },
+            { type: "image", src: "/Images2/JS-3.jpeg" },
+          ],
+          desc: "Pagina web de comunicacion de puerto a puerto de forma segura, Jsend va a ser una herramienta de comunicacion 100% segura, con multiples sistemas de seguridad para mantener la integridad de neustros datos",
+          facts: [
+            "Motor: HTML, CSS, JS, Python, FastAPi",
+            "Estado: en desarrollo",
+            "Fecha: 2026-Actualidad",
+          ],
+        },
+        "SPH": {
+          title: "SoftPhone",
+          type: "Comunicación",
+          filename: "SoftPhone.exe",
+          images: [
+            { type: "image", src: "/Images2/SF-1.jpeg" },
+            { type: "image", src: "/Images2/SF-2.jpeg" },
+            { type: "image", src: "/Images2/SF-3.jpeg" },
+          ],
+          desc: "Descripción del cuarto proyecto. Sustituye este texto e imágenes por las tuyas.",
+          facts: [
+            "Motor: Unity + C#",
+            "Sprites creados y animados con SpriteMaker",
+            "Estado: en desarrollo",
+          ],
+        },
+      };
+
+      const body = document.body;
+      const backdrop = document.getElementById("modalBackdrop");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalType = document.getElementById("modalType");
+      const modalDesc = document.getElementById("modalDesc");
+      const modalFacts = document.getElementById("modalFacts");
+      const modalFilename = document.getElementById("modalFilename");
+
+      const carouselTrack = document.getElementById("carouselTrack");
+      const carouselDots = document.getElementById("carouselDots");
+      const carouselPrev = document.getElementById("carouselPrev");
+      const carouselNext = document.getElementById("carouselNext");
+
+      let currentImages = [];
+      let currentIndex = 0;
+
+      // Convierte cualquier URL de YouTube (youtu.be, watch?v=, embed) en una URL de embed válida
+      function getYouTubeEmbedUrl(url) {
+        let videoId = "";
+        try {
+          const u = new URL(url);
+          if (u.hostname.includes("youtu.be")) {
+            videoId = u.pathname.slice(1);
+          } else if (u.hostname.includes("youtube.com")) {
+            if (u.pathname.startsWith("/embed/")) {
+              videoId = u.pathname.split("/embed/")[1];
+            } else {
+              videoId = u.searchParams.get("v");
+            }
+          }
+        } catch (e) {
+          videoId = "";
+        }
+        return `https://www.youtube.com/embed/${videoId}?rel=0`;
+      }
+
+      function pauseAllVideos() {
+        // Los iframes de YouTube no se pueden pausar directamente sin la API,
+        // así que los recargamos (quitando el src) para detener la reproducción.
+        carouselTrack.querySelectorAll("iframe").forEach((f) => {
+          const src = f.src;
+          f.src = src;
+        });
+      }
+
+      function renderCarousel() {
+        carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+        document.querySelectorAll(".carousel-dots span").forEach((dot, i) => {
+          dot.classList.toggle("active", i === currentIndex);
+        });
+      }
+
+      function goTo(index) {
+        pauseAllVideos();
+        currentIndex = (index + currentImages.length) % currentImages.length;
+        renderCarousel();
+      }
+
+      function openModal(key) {
+        const g = games[key];
+        if (!g) return;
+
+        modalTitle.textContent = g.title;
+        modalType.textContent = g.type;
+        modalDesc.textContent = g.desc;
+        modalFilename.textContent = g.filename;
+
+        modalFacts.innerHTML = "";
+        g.facts.forEach((f) => {
+          const li = document.createElement("li");
+          li.textContent = f;
+          modalFacts.appendChild(li);
+        });
+
+        // Construir carrusel, saltando videos que todavía no tienen enlace
+        currentImages = g.images.filter(
+          (item) => item.type !== "video" || item.src
+        );
+        currentIndex = 0;
+
+        carouselTrack.innerHTML = "";
+        currentImages.forEach((item) => {
+          const slide = document.createElement("div");
+          slide.className = "carousel-slide";
+
+          if (item.type === "video") {
+            const iframe = document.createElement("iframe");
+            iframe.src = getYouTubeEmbedUrl(item.src);
+            iframe.title = "Video del proyecto";
+            iframe.frameBorder = "0";
+            iframe.allow =
+              "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+            iframe.referrerPolicy = "strict-origin-when-cross-origin";
+            iframe.allowFullscreen = true;
+            slide.appendChild(iframe);
+          } else {
+            slide.style.backgroundImage = `url('${item.src}')`;
+          }
+
+          carouselTrack.appendChild(slide);
+        });
+        carouselDots.innerHTML = "";
+        currentImages.forEach((_, i) => {
+          const dot = document.createElement("span");
+          dot.addEventListener("click", () => goTo(i));
+          carouselDots.appendChild(dot);
+        });
+
+        // Ocultar flechas/puntos si solo hay una imagen
+        const single = currentImages.length <= 1;
+        carouselPrev.style.display = single ? "none" : "flex";
+        carouselNext.style.display = single ? "none" : "flex";
+        carouselDots.style.display = single ? "none" : "flex";
+
+        renderCarousel();
+        body.classList.add("modal-open");
+      }
+
+      function closeModal() {
+        pauseAllVideos();
+        body.classList.remove("modal-open");
+      }
+
+      document.querySelectorAll(".game-card").forEach((card) => {
+        card.addEventListener("click", () => openModal(card.dataset.game));
+      });
+
+      carouselPrev.addEventListener("click", () => goTo(currentIndex - 1));
+      carouselNext.addEventListener("click", () => goTo(currentIndex + 1));
+
+      document
+        .getElementById("modalClose")
+        .addEventListener("click", closeModal);
+      backdrop.addEventListener("click", (e) => {
+        if (e.target === backdrop) closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+        if (!body.classList.contains("modal-open")) return;
+        if (e.key === "ArrowLeft") goTo(currentIndex - 1);
+        if (e.key === "ArrowRight") goTo(currentIndex + 1);
+      });
+    </script>
+  </body>
+</html>
