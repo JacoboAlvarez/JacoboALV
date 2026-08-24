@@ -271,29 +271,56 @@
     50%{transform:translateY(6px);}
   }
 
-  /* ---------- Botón "Ver más" ---------- */
+/* ---------- Botón "Ver más" ---------- */
+.ver-mas{
+  position:absolute;
+  bottom:44px;
+  left:40%;
+  transform:translateX(-50%);
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family:var(--mono);
+  font-size:13px;
+  color:var(--ink);
+  background:var(--amber);
+  text-decoration:none;
+  padding:12px 22px;
+  border-radius:999px;
+  letter-spacing:.03em;
+  transition:transform .2s ease, background .2s ease;
+}
+.ver-mas:hover{
+  background:var(--teal);
+  transform:translateX(-50%) translateY(-3px);
+}
+
+/* ---------- Versión móvil: barra a la derecha ---------- */
+@media (max-width: 768px){
   .ver-mas{
-    position:absolute;
-    bottom:44px;
-    left:40%;
-    transform:translateX(-50%);
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-family:var(--mono);
-    font-size:13px;
-    color:var(--ink);
-    background:var(--amber);
-    text-decoration:none;
-    padding:12px 22px;
-    border-radius:999px;
-    letter-spacing:.03em;
-    transition:transform .2s ease, background .2s ease;
+    left:auto;
+    right:0;
+    top:130px;
+    bottom:auto;
+    transform:none;
+    height: 200px;
+
+    /* Lo convertimos en una barra pegada al borde */
+    flex-direction:column;
+    justify-content: center;
+    padding: 10px 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    writing-mode:vertical-rl;
+    text-orientation:mixed;
+    border-radius:12px 0 0 12px; /* redondeado solo del lado izquierdo */
+    box-shadow:-2px 0 8px rgba(0,0,0,.15);
   }
+
   .ver-mas:hover{
-    background:var(--teal);
-    transform:translateX(-50%) translateY(-3px);
+    transform:translateX(-4px);
   }
+}
 
   .contact-list{
     display:flex;
