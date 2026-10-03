@@ -18,13 +18,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Jacobo A. Proyectos">
 <meta name="twitter:description" content="Portafolio de desarrollador y músico">
-<meta name="twitter:image" content="https://tudominio.com/Images/Logo.png">
+<meta name="twitter:image" content="https://jacoboalvarez.github.io/JacoboALV/Images/Logo.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Jacobo Álvarez Delgado",
-  "url": "https://tudominio.com/",
+  "url": "https://jacoboalvarez.github.io/JacoboALV/",
   "sameAs": [
     "https://github.com/JacoboAlvarez",
     "https://www.linkedin.com/in/jacobo-alvarez-delgado-"
@@ -152,14 +152,19 @@
 
     <!-- 5. CONTACTO -->
     <section class="panel" id="contacto">
-      <div>
-        <div class="eyebrow">// Contactame y Hablemos</div>
-        <h2>Contacto</h2>
-        <p class="lede">¿Tienes un proyecto entre manos o quieres hablar de alguno de estos? Escríbeme.</p>
-        <div class="contact-list">
-          <a href="mailto:jacobo.alvarez.delgado@gmail.com"><span>Email</span><span class="label">jacobo.alvarez.delgado@gmail.com</span></a>
-          <a href="https://github.com/JacoboAlvarez" target="_blank" rel="noopener"><span>GitHub</span><span class="label">/JacoboAlvarez</span></a>
-          <a href="https://www.linkedin.com/in/jacobo-alvarez-delgado-/" target="_blank" rel="noopener"><span>LinkedIn</span><span class="label">/in/Jacobo-Alvarez-Delgado</span></a>
+      <div class="contact-grid">
+        <div>
+          <div class="eyebrow">// Contactame y Hablemos</div>
+          <h2>Contacto</h2>
+          <p class="lede">¿Tienes un proyecto entre manos o quieres hablar de alguno de estos? Escríbeme.</p>
+          <div class="contact-list">
+            <a href="mailto:jacobo.alvarez.delgado@gmail.com"><span>Email</span><span class="label">jacobo.alvarez.delgado@gmail.com</span></a>
+            <a href="https://github.com/JacoboAlvarez" target="_blank" rel="noopener"><span>GitHub</span><span class="label">/JacoboAlvarez</span></a>
+            <a href="https://www.linkedin.com/in/jacobo-alvarez-delgado-/" target="_blank" rel="noopener"><span>LinkedIn</span><span class="label">/in/Jacobo-Alvarez-Delgado</span></a>
+          </div>
+        </div>
+        <div class="contact-img">
+          <img src="Images/Foto.jpeg" alt="Foto de Jacobo" class="contact-photo" oncontextmenu="return false;">
         </div>
       </div>
     </section>
@@ -182,11 +187,12 @@
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
         const index = sections.indexOf(entry.target);
         setActive(entry.target.id, index);
       }
     });
-  }, { root: document.getElementById('scroller'), threshold: 0.55 });
+  }, { root: document.getElementById('scroller'), threshold: 0.1 });
 
   sections.forEach(s => observer.observe(s));
 
