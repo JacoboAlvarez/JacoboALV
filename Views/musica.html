@@ -9,6 +9,33 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="CSS/musica.css">
+<meta name="description" content="Portafolio de Jacobo Álvarez Delgado: desarrollador .NET MAUI/WASP, creador de videojuegos Unity y músico autodidacta.">
+<meta property="og:title" content="Jacobo A. Proyectos">
+<meta property="og:description" content="Portafolio de desarrollador y músico">
+<meta property="og:image" content="https://tudominio.com/Images/Logo.png">
+<meta property="og:url" content="https://tudominio.com/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jacobo A. Proyectos">
+<meta name="twitter:description" content="Portafolio de desarrollador y músico">
+<meta name="twitter:image" content="https://tudominio.com/Images/Logo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jacobo Álvarez Delgado",
+  "url": "https://tudominio.com/",
+  "sameAs": [
+    "https://github.com/JacoboAlvarez",
+    "https://www.linkedin.com/in/jacobo-alvarez-delgado-"
+  ],
+  "occupation": "Software Developer / Music Producer",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tu Ciudad"
+  }
+}
+</script>
 </head>
 <body>
 
@@ -90,7 +117,7 @@
           </div>
         </button>
         <div class="album-body">
-          <p class="album-desc">Disco más pesado y directo, con un ambiente mas oscuro y rapido, teniendo de inspiracion a grandes grupos del Trash,Death,Speed Metal. 
+          <p class="album-desc">Disco más pesado y directo, con un ambiente mas oscuro y rapido, teniendo de inspiracion a grandes grupos del Trash,Death,Speed Metal.
             Un disco que junta caos y ritmo de una manera agresiva y sucia.
           </p>
 
@@ -100,22 +127,7 @@
           </div>
 
           <div class="track">
-            <div class="track-title"><span><span class="num">02</span>DeathMachine</span></div>
-            <audio class="preview-audio" controls controlsList="nodownload noremoteplayback" preload="none" src="../Audio/NoseLaverdad.mp3"></audio>
-          </div>
-
-          <div class="track">
-            <div class="track-title">
-              <span><span class="num">03</span>Sin título</span>
-              <span class="track-pending">próximamente</span>
-            </div>
-          </div>
-
-          <div class="track">
-            <div class="track-title">
-              <span><span class="num">04</span>Sin título</span>
-              <span class="track-pending">próximamente</span>
-            </div>
+            <div class="track-title"><span><span class="num">02</span>DeathMachine</span></div
           </div>
         </div>
       </div>
@@ -165,44 +177,46 @@
   <footer>
     <span>© 2026 Jacobo Álvarez Delgado</span>
     <div class="socials">
-      <a href="mailto:jacobo.alvarez.delgado@gmail.com">Email</a>
-      <a href="https://github.com/tu-usuario" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/jacobo-alvarez-delgado-/" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="mailto:jacobo.alvarez.delgado@gmail.com">
+    <span>Email</span><span class="label">jacobo.alvarez.delgado@gmail.com</span>
+  </a>
+   <a href="https://github.com/JacoboAlvarez" target="_blank" rel="noopener"><span>GitHub</span><span class="label">/JacoboAlvarez</span></a>
+  <a href="https://www.linkedin.com/in/jacobo-alvarez-delgado-/" target="_blank" rel="noopener"><span>LinkedIn</span><span class="label">/in/Jacobo-Alvarez-Delgado</span></a>  
     </div>
   </footer>
 
-<script>
+  <script>
 
-  const LIMITE_SEGUNDOS = 30;
+    const LIMITE_SEGUNDOS = 30;
 
-  document.querySelectorAll('.album-header').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const album = btn.closest('.album');
-      const body = album.querySelector('.album-body');
-      const isOpen = album.classList.contains('open');
+    document.querySelectorAll('.album-header').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const album = btn.closest('.album');
+        const body = album.querySelector('.album-body');
+        const isOpen = album.classList.contains('open');
 
-      if (isOpen) {
-        album.classList.remove('open');
-        body.style.maxHeight = null;
-      } else {
-        album.classList.add('open');
-        body.style.maxHeight = body.scrollHeight + 'px';
-      }
+        if (isOpen) {
+          album.classList.remove('open');
+          body.style.maxHeight = null;
+        } else {
+          album.classList.add('open');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
     });
-  });
 
-  document.querySelectorAll('.preview-audio').forEach(audio => {
-    // Bloquea el menú contextual (clic derecho) para evitar "Guardar audio como..."
-    audio.addEventListener('contextmenu', e => e.preventDefault());
+    document.querySelectorAll('.preview-audio').forEach(audio => {
+      // Bloquea el menú contextual (clic derecho) para evitar "Guardar audio como..."
+      audio.addEventListener('contextmenu', e => e.preventDefault());
 
-    // Corta la reproducción al llegar al límite de segundos
-    audio.addEventListener('timeupdate', () => {
-      if (audio.currentTime >= LIMITE_SEGUNDOS) {
-        audio.pause();
-        audio.currentTime = 0;
-      }
+      // Corta la reproducción al llegar al límite de segundos
+      audio.addEventListener('timeupdate', () => {
+        if (audio.currentTime >= LIMITE_SEGUNDOS) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
