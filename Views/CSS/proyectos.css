@@ -145,10 +145,11 @@
   .game-card .type{
     display:inline-block;
     font-family:var(--mono);
+    width: 68%;
     font-size:11px;
     color:var(--teal);
     border:1px solid var(--teal);
-    padding:3px 8px;
+    padding:3px;
     border-radius:999px;
   }
   .game-card .status{
