@@ -449,3 +449,14 @@
   object-fit: cover;
   display: block;
 }
+
+.carousel{
+  position: relative;
+}
+
+.carousel-slide iframe{
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}

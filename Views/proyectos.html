@@ -12,33 +12,42 @@
     />
     <link rel="stylesheet" href="CSS/proyectos.css" />
     <link rel="shortcut icon" href="../Images/Logo.ico" type="image/x-icon" />
-    <meta name="description" content="Portafolio de Jacobo Álvarez Delgado: desarrollador .NET MAUI/WASP, creador de videojuegos Unity y músico autodidacta.">
-    <meta property="og:title" content="Jacobo A. Proyectos">
-    <meta property="og:description" content="Portafolio de desarrollador y músico">
-    <meta property="og:image" content="../Images/Logo.png">
-    <meta property="og:url" content="https://tudominio.com/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Jacobo A. Proyectos">
-    <meta name="twitter:description" content="Portafolio de desarrollador y músico">
-    <meta name="twitter:image" content="../Images/Logo.png">
+    <meta
+      name="description"
+      content="Portafolio de Jacobo Álvarez Delgado: desarrollador .NET MAUI/WASP, creador de videojuegos Unity y músico autodidacta."
+    />
+    <meta property="og:title" content="Jacobo A. Proyectos" />
+    <meta
+      property="og:description"
+      content="Portafolio de desarrollador y músico"
+    />
+    <meta property="og:image" content="../Images/Logo.png" />
+    <meta property="og:url" content="https://tudominio.com/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jacobo A. Proyectos" />
+    <meta
+      name="twitter:description"
+      content="Portafolio de desarrollador y músico"
+    />
+    <meta name="twitter:image" content="../Images/Logo.png" />
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Jacobo Álvarez Delgado",
-  "url": "https://tudominio.com/",
-  "sameAs": [
-    "https://github.com/JacoboAlvarez",
-    "https://www.linkedin.com/in/jacobo-alvarez-delgado-"
-  ],
-  "occupation": "Software Developer / Music Producer",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Tu Ciudad"
-  }
-}
-</script>
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jacobo Álvarez Delgado",
+        "url": "https://tudominio.com/",
+        "sameAs": [
+          "https://github.com/JacoboAlvarez",
+          "https://www.linkedin.com/in/jacobo-alvarez-delgado-"
+        ],
+        "occupation": "Software Developer / Music Producer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tu Ciudad"
+        }
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -116,7 +125,10 @@
       <span>© 2026 Jacobo Álvarez Delgado</span>
       <div class="socials">
         <a href="mailto:jacobo.alvarez.delgado@gmail.com">Email</a>
-        <a href="https://github.com/JacoboAlvarez" target="_blank" rel="noopener"
+        <a
+          href="https://github.com/JacoboAlvarez"
+          target="_blank"
+          rel="noopener"
           >GitHub</a
         >
         <a
@@ -128,7 +140,7 @@
       </div>
     </footer>
 
-    <!-- ---------- Modal ---------- -->
+        <!-- ---------- Modal ---------- -->
     <div class="modal-backdrop" id="modalBackdrop">
       <div
         class="modal-window"
@@ -143,22 +155,28 @@
             ✕
           </button>
         </div>
-        <div class="modal-carousel" id="carouselTrack"></div>
-        <button
-          class="carousel-btn prev"
-          id="carouselPrev"
-          aria-label="Anterior"
-        >
-          ‹
-        </button>
-        <button
-          class="carousel-btn next"
-          id="carouselNext"
-          aria-label="Siguiente"
-        >
-          ›
-        </button>
-        <div class="carousel-dots" id="carouselDots"></div>
+
+        <div class="carousel">
+          <div class="modal-carousel">
+            <div class="carousel-track" id="carouselTrack"></div>
+          </div>
+          <button
+            class="carousel-btn prev"
+            id="carouselPrev"
+            aria-label="Anterior"
+          >
+            ‹
+          </button>
+          <button
+            class="carousel-btn next"
+            id="carouselNext"
+            aria-label="Siguiente"
+          >
+            ›
+          </button>
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+
         <div class="modal-body">
           <div class="title" id="modalTitle"></div>
           <div class="type" id="modalType"></div>
@@ -170,7 +188,7 @@
 
     <script>
       const games = {
-        "AKB": {
+        AKB: {
           title: "Akihabara Market",
           type: "Administracion",
           filename: "AkihabaraMarket.exe",
@@ -187,7 +205,7 @@
             "Fecha: 2022",
           ],
         },
-        "SLV": {
+        SLV: {
           title: "Salovet",
           type: "Administracion",
           filename: "Salovet.exe",
@@ -197,15 +215,14 @@
             { type: "image", src: "../Images2/SV-2.png" },
             { type: "image", src: "../Images2/SV-3.png" },
           ],
-          desc: "Aplicacion de Administracion Veterinaria pensada para cualquier tipo de veterinaria, con aplicacion movil para mantener una comunicacion mas clara y sencilla, teniendo su apartado de sobremesa para los profesionales \n"
-          ,
+          desc: "Aplicacion de Administracion Veterinaria pensada para cualquier tipo de veterinaria, con aplicacion movil para mantener una comunicacion mas clara y sencilla, teniendo su apartado de sobremesa para los profesionales \n",
           facts: [
             "Motor: .NET , .NET MAUI, PostgreSQL, Swagger",
             "Estado: Finalizado",
             "Fecha: 2026",
           ],
         },
-        "JSD": {
+        JSD: {
           title: "J-SEND",
           type: "Comunicación",
           filename: "www.JSend.com",
@@ -221,7 +238,7 @@
             "Fecha: 2026-Actualidad",
           ],
         },
-        "SPH": {
+        SPH: {
           title: "SoftPhone",
           type: "Comunicación",
           filename: "SoftPhone.exe",
@@ -315,7 +332,7 @@
 
         // Construir carrusel, saltando videos que todavía no tienen enlace
         currentImages = g.images.filter(
-          (item) => item.type !== "video" || item.src
+          (item) => item.type !== "video" || item.src,
         );
         currentIndex = 0;
 

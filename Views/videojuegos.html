@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="CSS/videojuegos.css" />
-    <link rel="shortcut icon" href="/Images/Logo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../Images/Logo.ico" type="image/x-icon" />
     <meta name="description" content="Portafolio de Jacobo Álvarez Delgado: desarrollador .NET MAUI/WASP, creador de videojuegos Unity y músico autodidacta.">
     <meta property="og:title" content="Jacobo A. Proyectos">
     <meta property="og:description" content="Portafolio de desarrollador y músico">
@@ -65,7 +65,7 @@
         <button class="game-card" data-game="leaf-knight">
           <div
             class="thumb"
-            style="background-image: url(&quot;/Images/LK-MENU.jpeg&quot;)"
+            style="background-image: url(&quot;../Images/LK-MENU.jpeg&quot;)"
           ></div>
           <div class="info">
             <h3>Leaf Knight</h3>
@@ -77,7 +77,7 @@
         <button class="game-card" data-game="la-niebla">
           <div
             class="thumb"
-            style="background-image: url(&quot;/Images/LN-MENU.jpeg&quot;)"
+            style="background-image: url(&quot;../Images/LN-MENU.jpeg&quot;)"
           ></div>
           <div class="info">
             <h3>La Niebla</h3>
@@ -104,7 +104,7 @@
       </div>
     </footer>
 
-    <!-- ---------- Modal ---------- -->
+       <!-- ---------- Modal ---------- -->
     <div class="modal-backdrop" id="modalBackdrop">
       <div
         class="modal-window"
@@ -119,22 +119,28 @@
             ✕
           </button>
         </div>
-        <div class="modal-carousel" id="carouselTrack"></div>
-        <button
-          class="carousel-btn prev"
-          id="carouselPrev"
-          aria-label="Anterior"
-        >
-          ‹
-        </button>
-        <button
-          class="carousel-btn next"
-          id="carouselNext"
-          aria-label="Siguiente"
-        >
-          ›
-        </button>
-        <div class="carousel-dots" id="carouselDots"></div>
+
+        <div class="carousel">
+          <div class="modal-carousel">
+            <div class="carousel-track" id="carouselTrack"></div>
+          </div>
+          <button
+            class="carousel-btn prev"
+            id="carouselPrev"
+            aria-label="Anterior"
+          >
+            ‹
+          </button>
+          <button
+            class="carousel-btn next"
+            id="carouselNext"
+            aria-label="Siguiente"
+          >
+            ›
+          </button>
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+
         <div class="modal-body">
           <div class="title" id="modalTitle"></div>
           <div class="type" id="modalType"></div>
@@ -151,9 +157,9 @@
           type: "Plataformas",
           filename: "LeafKnight.exe",
           images: [
-            { type: "image", src: "/Images/LK-MENU.jpeg" },
+            { type: "image", src: "../Images/LK-MENU.jpeg" },
             { type: "video", src: "https://youtu.be/Y0oPF7LG9EU" },
-            { type: "image", src: "/Images/LK-1.jpeg" },
+            { type: "image", src: "../Images/LK-1.jpeg" },
           ],
           desc: "Plataformas 2D con sprites animados a mano y una narrativa propia.",
           facts: [
@@ -167,9 +173,9 @@
           type: "Plataformas",
           filename: "LaNiebla.exe",
           images: [
-            { type: "image", src: "/Images/LN-MENU.jpeg" },
-            { type: "image", src: "/Images/LN-2.jpeg" },
-            { type: "image", src: "/Images/LN-1.jpeg" },
+            { type: "image", src: "../Images/LN-MENU.jpeg" },
+            { type: "image", src: "../Images/LN-2.jpeg" },
+            { type: "image", src: "../Images/LN-1.jpeg" },
           ],
           desc: "Segundo proyecto de plataformas, todavía en fase temprana de desarrollo.",
           facts: [
